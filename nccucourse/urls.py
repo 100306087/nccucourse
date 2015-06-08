@@ -15,8 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from recommand.views import hello_world, login, logout, index
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^hello/$', 'recommand.views.hello_world'),
+    url(r'^hello/$', hello_world),
+    # Url Entries for social auth
+    url('', include('social.apps.django_app.urls', namespace='social')),
+    # Url Entries for django administration
+    url('', include('django.contrib.auth.urls', namespace='auth')),
+    url(r'^accounts/login/$',login),
+    url(r'^accounts/logout/$',logout),
+    url(r'^index/$',index),
 ]

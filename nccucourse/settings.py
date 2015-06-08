@@ -34,10 +34,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
+    'social.apps.django_app.default',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'recommand',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,23 +53,40 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+# Authentication backends Setting
+AUTHENTICATION_BACKENDS = (
+    # For Facebook Authentication
+    'social.backends.facebook.FacebookOAuth2',
+    # Default Django Auth Backends
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 ROOT_URLCONF = 'nccucourse.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates').replace('\\', '/'),],
+        'DIRS': [os.path.join('templates').replace('\\', '/'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
+                # Default Template context processors
                 'django.contrib.auth.context_processors.auth',
+                'django.core.context_processors.debug',
+                'django.core.context_processors.i18n',
+                'django.core.context_processors.media',
+                'django.core.context_processors.static',
+                'django.core.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+
+                # Setting of Template Context Processors for Social Auth
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect', 
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'nccucourse.wsgi.application'
 
@@ -101,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+SOCIAL_AUTH_FACEBOOK_KEY = '569959079774536'
+SOCIAL_AUTH_FACEBOOK_SECRET = '38fda4fb118ea341a356f874a87af1c7'
