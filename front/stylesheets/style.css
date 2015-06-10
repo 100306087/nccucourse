@@ -1,0 +1,183 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, ../sass/reset.scss */
+/* line 6, ../sass/style.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  color: #464646;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, ../sass/reset.scss */
+/* line 30, ../sass/style.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../sass/reset.scss */
+/* line 36, ../sass/style.scss */
+body {
+  line-height: 1;
+  background-color: #f0f0f0;
+}
+
+/* line 34, ../sass/reset.scss */
+/* line 42, ../sass/style.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/reset.scss */
+/* line 47, ../sass/style.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, ../sass/reset.scss */
+/* line 52, ../sass/style.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../sass/reset.scss */
+/* line 59, ../sass/style.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 49, ../sass/reset.scss */
+/* line 65, ../sass/style.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*start here*/
+/* line 71, ../sass/style.scss */
+.nav {
+  color: white;
+}
+/* line 73, ../sass/style.scss */
+.nav span {
+  color: white;
+}
+
+/* line 77, ../sass/style.scss */
+.searcharea {
+  position: relative;
+  margin-top: 200px;
+  width: 100%;
+}
+/* line 81, ../sass/style.scss */
+.searcharea input {
+  width: 50%;
+  height: 38px;
+  position: relative;
+  margin-left: 20%;
+}
+/* line 88, ../sass/style.scss */
+.searcharea .searchBtn span {
+  color: white;
+}
+
+/* line 94, ../sass/style.scss */
+.tagarea {
+  min-height: 100px;
+  width: 60%;
+  position: relative;
+  left: 20%;
+}
+/* line 99, ../sass/style.scss */
+.tagarea .tagstar {
+  position: relative;
+  background-color: #f44336;
+}
+/* line 103, ../sass/style.scss */
+.tagarea .tag {
+  position: relative;
+}
+/* line 105, ../sass/style.scss */
+.tagarea .tag .close {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  opacity: 0.1;
+}
+/* line 111, ../sass/style.scss */
+.tagarea .tag .close:hover {
+  position: absolute;
+  opacity: 1;
+  width: 100%;
+  z-index: 100;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* line 120, ../sass/style.scss */
+.tagarea button {
+  margin: 30px 20px 0 0;
+}
+/* line 122, ../sass/style.scss */
+.tagarea button span {
+  color: white;
+}
+
+/* line 128, ../sass/style.scss */
+.selectorarea {
+  text-align: center;
+}
+/* line 130, ../sass/style.scss */
+.selectorarea .select {
+  margin: 10px 30px;
+}
+
+/* line 136, ../sass/style.scss */
+.list .searchlistcard {
+  max-width: 1080px;
+  margin: auto;
+  margin-top: 50px;
+}
+/* line 140, ../sass/style.scss */
+.list .searchlistcard .searchList {
+  text-align: center;
+}
+/* line 142, ../sass/style.scss */
+.list .searchlistcard .searchList tr.ng-scope:hover {
+  background-color: rgba(244, 67, 54, 0.46);
+  cursor: pointer;
+}
+/* line 147, ../sass/style.scss */
+.list .searchlistcard .searchList .title td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* line 151, ../sass/style.scss */
+.list .searchlistcard .searchList td {
+  height: 30px;
+  line-height: 30px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/**/
