@@ -1,0 +1,170 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, ../sass/reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  color: #464646;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 27, ../sass/reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 31, ../sass/reset.scss */
+body {
+  line-height: 1;
+  background-color: #f0f0f0;
+}
+
+/* line 34, ../sass/reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 37, ../sass/reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 40, ../sass/reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 45, ../sass/reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 49, ../sass/reset.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*start here*/
+.nav{
+	color: white;
+	span{
+		color: white;
+	}
+}
+.searcharea{
+	position: relative;
+	margin-top: 200px;
+	width: 100%;
+	input{
+		width: 50%;
+	  height: 38px;
+	  position: relative;
+	  margin-left: 20%;
+	}
+	.searchBtn{
+		span{
+			color: white;
+		}
+	}
+}
+
+.tagarea{
+	min-height: 100px;
+	width: 60%;
+	position: relative;
+	left: 20%;
+	.tagstar{
+		position: relative;
+		background-color: rgb(244,67,54);
+	}
+	.tag{
+		position: relative;
+		.close{
+			position: absolute;
+			width: 100%;
+			right: 0;
+			opacity: 0.1;
+		}
+		.close:hover{
+			position: absolute;
+			opacity: 1;
+		  width: 100%;
+		  z-index: 100;
+		  left: 0;
+		  background-color: rgba(0,0,0,.8);
+		}
+	}
+	button{
+		margin: 30px 20px 0 0 ;
+		span{
+			color: white;
+		}
+	}
+}
+
+.selectorarea{
+	text-align: center;
+	.select{
+		margin: 10px 30px;
+	}
+}
+
+.list{
+	.searchlistcard{
+		max-width: 1080px;
+  	margin: auto;
+  	margin-top: 50px;
+  	.searchList{
+  		text-align: center;
+			tr.ng-scope:hover {
+			  background-color: rgba(244, 67, 54, 0.46);
+			  cursor: pointer;
+			}
+  		.title{
+  			td{
+  				border-bottom: 1px solid rgba(0,0,0,.1);
+  			}
+  		}
+  		td{
+  			height: 30px;
+  			line-height: 30px;
+  			border-right: 1px solid rgba(0,0,0,.1);
+  			border-left: 1px solid rgba(0,0,0,.1);
+  		}
+  	}
+	}
+}
+
+
+
+/**/
+
+
+
+
+
+
+
