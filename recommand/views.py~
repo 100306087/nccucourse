@@ -1,0 +1,50 @@
+from django.shortcuts import render
+from recommand.models import raw_course
+from recommand.models import course
+from recommand.models import user
+from recommand.models import course_score
+from recommand.models import user_course
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+import json
+# Create your views here.
+
+
+@csrf_exempt
+def courses_save(request):
+    if request.method == 'POST':
+        course_name = request.POST.getlist('course_name[]')
+	course_code = request.POST.getlist('course_code[]')
+        course_score = request.POST.getlist('course_score[]')
+        final = zip(course_name,course_code,course_score)
+	for i in final:
+	    #user_course.objects.create(u_id = 123123, c_id = int(i[1]), uc_grade = int(i[2]) )
+	    print i[1]
+        result_list = [{'result':'success'}]
+        return HttpResponse(json.dumps(result_list))
+    else:
+        return HttpResponse('error')
+
+def get_recommand(request):
+    if request.method == 'POST':
+	user_id = request.POST.get('user_id')
+        result_list = [{'result':'success'}]
+	return HttpResponse(json.dumps(result_list))
+    else:
+        result_list = [{'result':'error'}]
+	return HttpResponse(json.dumps(result_list))
+
+
+@csrf_exempt
+def score(request):
+    if request.method == 'POST':
+	score = int(request.POST.get('score'))
+	user_id = int(request.POST.get('user_id'))
+	course_id = int(request.POST.get('course_id'))
+	comment = request.POST.get('comment')
+    	course_score.objects.create(u_id=user_id, c_id=course_id, cs_score=score, cs_comment=comment)
+        result_list = [{'result':'success'}]
+        return HttpResponse(json.dumps(result_list))
+    else:
+	result = [{'result':'error'}]
+        return HttpResponse(json.dumps(result))

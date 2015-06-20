@@ -18,7 +18,7 @@ from django.contrib import admin
 from login.views import *
 from recommand.views import *
 from crawler.views import *
-from search.views import *
+
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -32,7 +32,5 @@ urlpatterns = [
     url(r'^index/$',index),
     url(r'^score/$',score),
     url(r'^courses_save/$',courses_save),
-    url(r'^read_csv/$',read_Coursecsv),
-    url(r'^dosearch/$',dosearch),
     #url(r'^search/$',search_all):
 ]
