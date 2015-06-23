@@ -12,6 +12,13 @@ app.filter('range', function() {
 app.controller('AppCtrl', function($scope,$http,$location) {
 
   $scope.init = function(){
+    $http.get('http://140.119.19.39:8000/islogin').success(function(response) {
+      if (response.result == 'success') {$scope.member = '我的推薦';}
+      else{
+        $scope.member = '登入';
+        $('.member').attr('href',"http://140.119.19.39:8000/login/facebook/?next=http://140.119.19.39:8000/static/index/");
+      }
+    });
     if ($location.path().length<1) {
       console.log('nothing');
     }
@@ -136,6 +143,13 @@ app.controller('AppCtrl', function($scope,$http,$location) {
 
 app.controller('CourseCtrl',function($scope, $http){
   $scope.init = function(){
+    $http.get('http://140.119.19.39:8000/islogin').success(function(response) {
+      if (response.result == 'success') {$scope.member = '我的推薦';}
+      else{
+        $scope.member = '登入';
+        $('.member').attr('href',"http://140.119.19.39:8000/login/facebook/?next=http://140.119.19.39:8000/static/index/");
+      }
+    });
     var id = location.search.split('?id=')[1];
     $http.get('http://140.119.19.39:8000/moreinfor/?courseid='+id)
     .success(function(response){
