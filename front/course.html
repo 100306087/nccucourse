@@ -3,15 +3,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
   <title>帕森課程查詢系統</title>
-  <script type="text/javascript" src="javascripts/angular-1.3.15.min.js"></script>
-  <script type="text/javascript" src="javascripts/angular-animate-1.3.15.min.js"></script>
-  <script type="text/javascript" src="javascripts/angular-aria-1.3.15.min.js"></script>
-  <script type="text/javascript" src="javascripts/angular-material-0.9.7.min.js"></script>
-  <script type="text/javascript" src="javascripts/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript" src="javascripts/app.js"></script>
-  <link rel="stylesheet" type="text/css" href="stylesheet2/reset.css">
-  <link rel="stylesheet" type="text/css" href="stylesheet2/angular-material-0.9.7.min.css">
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <script type="text/javascript" src="static/javascripts/angular-1.3.15.min.js"></script>
+  <script type="text/javascript" src="static/javascripts/angular-animate-1.3.15.min.js"></script>
+  <script type="text/javascript" src="static/javascripts/angular-aria-1.3.15.min.js"></script>
+  <script type="text/javascript" src="static/javascripts/angular-material-0.9.7.min.js"></script>
+  <script type="text/javascript" src="static/javascripts/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="static/javascripts/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="static/stylesheet2/reset.css">
+  <link rel="stylesheet" type="text/css" href="static/stylesheet2/angular-material-0.9.7.min.css">
+  <link rel="stylesheet" type="text/css" href="static/stylesheets/style.css">
 </head>
 <body>
   <div ng-controller="CourseCtrl" ng-init="init()">
@@ -49,8 +49,8 @@
       <div class="commentContainer">
         <md-card class="comment_card" ng-repeat="item in courseReview">
           <div class="profile">
-            <img src="{{item.user_img}}" class="user_img">
-            <h4>{{item.user}}</h4>
+            <img src="{{item.course_commentphoto}}" class="user_img">
+            <h4>{{item.course_commentname}}</h4>
           </div>
           <div class="comment">
             <h3>{{item.course_comment}}

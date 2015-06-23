@@ -36,17 +36,17 @@ app.controller('AppCtrl', function($scope,$http,$location) {
       $('.swaerch_key').val($scope.params.key);
       $http.get('http://140.119.19.39:8000/dosearch/'+'?department='+$scope.params.department+'&time='+$scope.params.time+'&stars='+$scope.params.stars+'&key='+$scope.params.key+'&page=1')
       .success(function(response){
-        $scope.courses = response;
+        $scope.courses = response.courses;
         console.log($scope.courses);
+        if (response.allnumber > 100) { response.allnumber = 101};
+        $scope.courses.quantity = response.allnumber;
+        $scope.pager = [];
+        page = Math.floor(($scope.courses.quantity-1)/10);
+        for (var i = 0; i<page; i++) {
+          $scope.pager[i] = i+1;
+        };
+        setTimeout(function(){$('.pager'+$scope.params.page).addClass('active');},100);
       });
-      $scope.pager = [];
-      page = Math.floor(($scope.courses.quantity-1)/10);
-      console.log(page);
-      for (var i = 0; i<page; i++) {
-        $scope.pager[i] = i+1;
-      };
-      setTimeout(function(){$('.pager'+$scope.params.page).addClass('active');},100);
-      console.log('.pager'+$scope.params.page);
     }
   };
 
@@ -104,18 +104,34 @@ app.controller('AppCtrl', function($scope,$http,$location) {
     $scope.removeArrayItem($scope.tags2, tag);
   };
 
-  $scope.search = function(){
+  $scope.search = function(num){
     var key = $('.swaerch_key').val();
     console.log('系所：'+$scope.tags+'/時間：'+$scope.tags2+'/星星：'+$scope.tag3.split('')[0]+'/關鍵字：'+key);
     $('.searcharea').animate({'margin-top':'50'},500);
-    $http.get('http://140.119.19.39:8000/dosearch/'+'?department='+$scope.tags+'&time='+$scope.tags2+'&stars='+$scope.tag3.split('')[0]+'&key='+key+'&page=1')
+    $http.get('http://140.119.19.39:8000/dosearch/'+'?department='+$scope.tags+'&time='+$scope.tags2+'&stars='+$scope.tag3.split('')[0]+'&key='+key+'&page='+num)
       .success(function(response){
-        $scope.courses = response;
-        console.log($scope.courses);
+          $scope.courses = response.courses;
+          console.log($scope.courses);
+          if (response.allnumber > 101) { response.allnumber = 101};
+          $scope.courses.quantity = response.allnumber;
+          $scope.pager = [];
+          page = Math.floor(($scope.courses.quantity-1)/10);
+          for (var i = 0; i<page; i++) {
+            $scope.pager[i] = i+1;
+          };
+          $('.active').removeClass('active');
+          $('.pager'+num).addClass('active');
       });
-    $location.path('?department='+$scope.tags+'&time='+$scope.tags2+'&stars='+$scope.tag3.split('')[0]+'&key='+key+'&page=1');
+    $location.path('?department='+$scope.tags+'&time='+$scope.tags2+'&stars='+$scope.tag3.split('')[0]+'&key='+key+'&page='+num);
     $scope.show.searchList = true;
-  }
+  };
+  $scope.goCourse = function(id){
+    location.assign('course.html?id='+id);
+  };
+  $scope.changePage = function(e,n){
+    e.preventDefault();
+    $scope.search(n);
+  };
 });
 
 app.controller('CourseCtrl',function($scope, $http){
@@ -123,6 +139,7 @@ app.controller('CourseCtrl',function($scope, $http){
     var id = location.search.split('?id=')[1];
     $http.get('http://140.119.19.39:8000/moreinfor/?courseid='+id)
     .success(function(response){
+      console.log(response);
       $scope.courseContent = response.course[0];
       $scope.courseReview = response.reviews;
       var total = 0;
@@ -167,6 +184,9 @@ app.controller('CourseCtrl',function($scope, $http){
         console.log(response);
       });
   }
+  $scope.cleanSearch = function(){
+    location.assign('index.html');
+  };
 
 });
 
