@@ -14,7 +14,7 @@ angular.module('fanpage2app', ['ngMaterial'])
       };
       $('.searcharea').animate({'margin-top':'50'},500);
       $scope.show.searchList = true;
-      $scope.params = {department:par[0][1],time:par[1][1],star:par[2][1],key:par[3][1]};
+      $scope.params = {department:par[0][1],time:par[1][1],star:par[2][1],key:par[3][1],page:par[4][1]};
       console.log($scope.params);
       $scope.tags = $scope.params.department.split(',');
       $scope.tags2 = $scope.params.time.split(',');
@@ -24,6 +24,14 @@ angular.module('fanpage2app', ['ngMaterial'])
       //   .success(function(response){
       //     $scope.courses = response;
       //   });
+      $scope.pager = [];
+      page = Math.floor(($scope.courses.quantity-1)/10);
+      console.log(page);
+      for (var i = 0; i<page; i++) {
+        $scope.pager[i] = i+1;
+      };
+      setTimeout(function(){$('.pager'+$scope.params.page).addClass('active');},100);
+      console.log('.pager'+$scope.params.page);
     }
   };
 
@@ -43,19 +51,19 @@ angular.module('fanpage2app', ['ngMaterial'])
   };
   
   $scope.departments = ['法律系','資管系','應數系'];
-  $scope.days = ['星期一早上','星期一中午','星期一下午','星期二','星期三','星期四','星期五'];
+  $scope.days = ['星期一早上','星期二','星期三','星期四','星期五'];
   $scope.stars = ['1顆星以上','2顆星以上','3顆星以上','4顆星以上','5顆星以上'];
   $scope.tag3 = '1顆星以上';
   $scope.tags = ['法律系'];
   $scope.tags2 = [];
-  $scope.courses = [
+  $scope.courses = {quantity:45,courses:[
     {name:'python程式入門',time:'星期三D~6',teacher:'曾正男',scores:'75~80',star:'5顆星'},
     {name:'python程式入門',time:'星期三D~6',teacher:'曾正男',scores:'75~80',star:'5顆星'},
     {name:'python程式入門',time:'星期三D~6',teacher:'曾正男',scores:'75~80',star:'5顆星'},
     {name:'python程式入門',time:'星期三D~6',teacher:'曾正男',scores:'75~80',star:'5顆星'},
     {name:'python程式入門',time:'星期三D~6',teacher:'曾正男',scores:'75~80',star:'5顆星'},
     {name:'python程式入門',time:'星期三D~6',teacher:'曾正男',scores:'75~80',star:'5顆星'},
-  ];
+  ]};
 
   $scope.addTag = function(tag){
     var repeat;
@@ -105,3 +113,7 @@ angular.module('fanpage2app', ['ngMaterial'])
 
 
 });
+
+
+
+

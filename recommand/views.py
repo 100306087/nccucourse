@@ -36,6 +36,13 @@ def read_Coursecsv(request):
                 CourseId = NewCourse.id
                 weDotHave = weDotHave+1
 
+<<<<<<< HEAD
+
+def my_page(request):
+    return render(request,'person.html',locals())
+
+def login(request):
+=======
             #學校這堂課有被輸入近學校課程資料課嗎，沒有舊輸進去
             RawCoures = raw_course.objects.filter(rc_subjectid=b[1])
             if(RawCoures):
@@ -45,6 +52,7 @@ def read_Coursecsv(request):
                 #return HttpResponse(b[8].decode('utf8')[1:])   
                 rawDotHave = rawDotHave+1
         LineLenth = LineLenth+1     
+>>>>>>> 7a31db697faddc22c717f5009076d3ca518e42a7
 
 
     #return HttpResponse(json.dumps(unicode(b[3])))
@@ -74,6 +82,10 @@ def get_recommand(request):
         result_list = [{'result':'error'}]
 	return HttpResponse(json.dumps(result_list))
 
+def js(request,following):
+    return render(request,'js/'+following,locals(),content_type="application/javascript")
+def css(request,following):
+    return render(request,'stylesheets/'+following,locals(),content_type="text/css")
 
 @csrf_exempt
 def score(request):

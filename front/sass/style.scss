@@ -160,9 +160,23 @@ a {
 
 
 
+.pager{
+	text-align: center;
+  width: 100%;
+  margin-top: 30px;
+  .pageS {
+	  margin-right: 10px;
+	  background-color: rgb(255, 255, 255);
+	  padding: 10px 15px;
+	  color: rgb(70, 70, 70);
+	  box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	}
+	.pageS.active {
+	  background-color: rgb(244, 67, 54);
+	  color: white;
+	}
+}
 /**/
-
-
 
 
 

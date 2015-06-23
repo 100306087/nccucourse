@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+<<<<<<< HEAD
+from recommand.views import hello_world, login, logout, index,my_page,js,css
+=======
 from login.views import *
 from recommand.views import *
 from crawler.views import *
 from search.views import *
+>>>>>>> 7a31db697faddc22c717f5009076d3ca518e42a7
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
@@ -30,9 +34,15 @@ urlpatterns = [
     url(r'^accounts/login/$',login),
     url(r'^accounts/logout/$',logout),
     url(r'^index/$',index),
+<<<<<<< HEAD
+    url(r'^mypage/$',my_page),
+    url(r'^js/(.*)',js),
+    url(r'^css/(.*)',css)
+=======
     url(r'^score/$',score),
     url(r'^courses_save/$',courses_save),
     url(r'^read_csv/$',read_Coursecsv),
     url(r'^dosearch/$',dosearch),
     #url(r'^search/$',search_all):
+>>>>>>> 7a31db697faddc22c717f5009076d3ca518e42a7
 ]
