@@ -26,7 +26,7 @@
             <a href="mypage.html">我的推薦</a>
           </md-button>
           <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+            <md-icon md-svg-icon="static/img/icons/more_vert.svg"></md-icon>
           </md-button>
         </div>
       </md-toolbar>
@@ -56,8 +56,8 @@
             <h3>{{item.course_comment}}
           </div>
           <div class="stars">
-            <img src="img/starfull.png" ng-repeat="n in [] | range:item.course_score">
-            <img src="img/starno.png" ng-repeat="n in [] | range:5-item.course_score">
+            <img src="static/img/starfull.png" ng-repeat="n in [] | range:item.course_score">
+            <img src="static/img/starno.png" ng-repeat="n in [] | range:5-item.course_score">
           </div>
         </md-card>
         <div style="width:100%;font-size:1.2em;text-align:center;margin:30px;" id="reply"><h2>我要評分</h2></div>
@@ -71,11 +71,11 @@
           </md-input-container>
           <br>
           <div>
-            <md-button class="starSelector" ng-click="giveScore(1)"><img src="img/starfull.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(2)"><img src="img/starfull.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(3)"><img src="img/starfull.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(4)"><img src="img/starno.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(5)"><img src="img/starno.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(1)"><img src="static/img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(2)"><img src="static/img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(3)"><img src="static/img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(4)"><img src="static/img/starno.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(5)"><img src="static/img/starno.png" style="width:30px;"></md-button>
             （ 你給了{{scores}}顆星 ）
           </div>
           <md-button style="background:rgb(63,81,181);" class="submitBtn" ng-click="commit()">送出</md-button>
