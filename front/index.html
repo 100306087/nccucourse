@@ -1,101 +1,97 @@
 <!DOCTYPE html>
-<html ng-app="fanpage2app">
-<head>
-  <title>帕森課程查詢系統</title>
-  <meta charset="utf-8">
+<html ng-app="fanpage2app"><head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
-  <title>MRT Express</title>
+  <title>帕森課程查詢系統</title>
   <script type="text/javascript" src="javascripts/angular-1.3.15.min.js"></script>
   <script type="text/javascript" src="javascripts/angular-animate-1.3.15.min.js"></script>
   <script type="text/javascript" src="javascripts/angular-aria-1.3.15.min.js"></script>
   <script type="text/javascript" src="javascripts/angular-material-0.9.7.min.js"></script>
   <script type="text/javascript" src="javascripts/jquery-2.1.3.min.js"></script>
   <script type="text/javascript" src="javascripts/app.js"></script>
-  <link rel="stylesheet" type="text/css" href="css2/reset.css">
-  <link rel="stylesheet" type="text/css" href="css2/angular-material-0.9.7.min.css">
-  <!-- <link rel="stylesheet" type="text/css" href="fonts/fonts.css"> -->
+  <link rel="stylesheet" type="text/css" href="stylesheet2/reset.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet2/angular-material-0.9.7.min.css">
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 </head>
 <body>
-<!-- main content -->
-
-<div ng-controller="AppCtrl" ng-init="init()">
-
-    <md-toolbar class="nav">
-      <div class="md-toolbar-tools">
-        <h2 ng-click='cleanSearch()' style="cursor: pointer;">
-          <span>帕森課程查詢系統</span>
-        </h2>
-        <span flex></span>
-        <md-button >
-          <a href="person.html">我的推薦</a>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="More">
-          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
-        </md-button>
-      </div>
-    </md-toolbar>
-
-    <div class="searcharea">
-        <input type="text" placeholder="請輸入課程關鍵字" class="swaerch_key">
-        <md-button class="md-raised md-primary searchBtn" ng-click="search()">搜尋</md-button>
-    </div>
-
-    <div class="tagarea">
-        <md-button ng-repeat="tag in tags" class="md-raised md-warn tag" ng-click="deleteTag(tag)">
-            {{tag}}
-            <span class="close">X</span>
-        </md-button>
-        <md-button ng-repeat="tag in tags2" class="md-raised md-warn tag" ng-click="deleteTag2(tag)">
-            {{tag}}
-            <span class="close">X</span>
-        </md-button>
-        <md-button class="md-warn tagstar">{{tag3}}</md-button>
-    </div>
-
-    <div class="selectorarea">
-        其他選項：
-        <md-select ng-model="tag1" style="min-width: 200px;" class="select" ng-change="addTag(tag1)">
-            <md-select-label>哪個系所開的課？</md-select-label>
-            <md-option ng-value="department" ng-repeat="department in departments">{{department}}</md-option>
-        </md-select>
-        <md-select ng-model="tag2" style="min-width: 200px;" class="select" ng-change="addTag2(tag2)">
-            <md-select-label>禮拜幾的課？</md-select-label>
-            <md-option ng-value="day" ng-repeat="day in days">{{day}}</md-option>
-        </md-select>
-        <md-select ng-model="tag3" style="min-width: 200px;" class="select">
-            <md-select-label>幾顆星以上的課？</md-select-label>
-            <md-option ng-repeat="star in stars">{{star}}</md-option>
-        </md-select>
-    </div>
-
-    <div class="list" ng-show = "show.searchList">
-    <br><br><br>
-        <h2 style="text-align:center;font-size:2em">搜尋結果</h2>
-        <div class="pager">
-            <a class="pageS pager{{page}}" href="#" ng-repeat="page in pager">{{page}}</a>
+  <div ng-controller="AppCtrl" ng-init="init()">
+      <md-toolbar class="nav">
+        <div class="md-toolbar-tools">
+          <h2 ng-click='cleanSearch()' style="cursor: pointer;">
+            <span>帕森課程查詢系統</span>
+          </h2>
+          <span flex></span>
+          <md-button >
+            <a href="mypage.html">我的推薦</a>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+          </md-button>
         </div>
-        <md-card class="searchlistcard">
-            <table style="width:100%" class="searchList">
-              <tr class="title">
-                <td>課程名稱</td>
-                <td>課程時間</td> 
-                <td>授課教師</td>
-                <td>評價</td>
-                <td>分數區間</td>
-              </tr>
-              <tr ng-repeat="course in courses.courses">
-                <td>{{course.name}}</td>
-                <td>{{course.time}}</td> 
-                <td>{{course.teacher}}</td>
-                <td>{{course.star}}</td>
-                <td>{{course.scores}}</td>
-              </tr>
-            </table>
-        </md-card>
-    </div>
+      </md-toolbar>
 
-</div>
+      <div class="searcharea">
+          <input type="text" placeholder="請輸入課程關鍵字" class="swaerch_key">
+          <md-button class="md-raised md-primary searchBtn" ng-click="search()">搜尋</md-button>
+      </div>
+
+      <div class="tagarea">
+          <md-button ng-repeat="tag in tags" class="md-raised md-warn tag" ng-click="deleteTag(tag)">
+              {{tag}}
+              <span class="close">X</span>
+          </md-button>
+          <md-button ng-repeat="tag in tags2" class="md-raised md-warn tag" ng-click="deleteTag2(tag)">
+              星期{{tag}}
+              <span class="close">X</span>
+          </md-button>
+          <md-button class="md-warn tagstar">{{tag3}}</md-button>
+      </div>
+
+      <div class="selectorarea">
+          其他選項：
+          <md-select ng-model="tag1" style="min-width: 200px;" class="select" ng-change="addTag(tag1)">
+              <md-select-label>哪個系所開的課？</md-select-label>
+              <md-option ng-value="department" ng-repeat="department in departments">{{department}}</md-option>
+          </md-select>
+          <md-select ng-model="tag2" style="min-width: 200px;" class="select" ng-change="addTag2(tag2)">
+              <md-select-label>禮拜幾的課？</md-select-label>
+              <md-option ng-value="day" ng-repeat="day in days">{{day}}</md-option>
+          </md-select>
+          <md-select ng-model="tag3" style="min-width: 200px;" class="select">
+              <md-select-label>幾顆星以上的課？</md-select-label>
+              <md-option ng-repeat="star in stars">{{star}}</md-option>
+          </md-select>
+      </div>
+
+      <div class="list" ng-show = "show.searchList">
+      <br><br><br>
+          <h2 style="text-align:center;font-size:2em">搜尋結果</h2>
+          <div class="pager">
+              <a class="pageS pager{{page}}" href="#" ng-repeat="page in pager" ng-click="changePage($event,page)">{{page}}</a>
+          </div>
+          <md-card class="searchlistcard">
+              <table style="width:100%" class="searchList">
+                <tr class="title">
+                  <td>課程名稱</td>
+                  <td>課程時間</td> 
+                  <td>授課教師</td>
+                  <td>評價</td>
+                </tr>
+                <tr ng-repeat="course in courses">
+                  <td>{{course.course_name}}</td>
+                  <td>{{course.course_weekday}}{{course.course_date}}</td> 
+                  <td>{{course.course_teacher}}</td>
+                  <td>{{course.course_star}}顆星星</td>
+                </tr>
+              </table>
+          </md-card>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+      </div>
+  </div>
+
 </body>
 </html>

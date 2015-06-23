@@ -33,6 +33,9 @@ footer, header, hgroup, menu, nav, section {
 }
 
 /* line 31, ../sass/reset.scss */
+html{
+	background-color: #f0f0f0;
+}
 body {
   line-height: 1;
   background-color: #f0f0f0;
@@ -139,7 +142,7 @@ a {
   	margin: auto;
   	margin-top: 50px;
   	.searchList{
-  		text-align: center;
+
 			tr.ng-scope:hover {
 			  background-color: rgba(244, 67, 54, 0.46);
 			  cursor: pointer;
@@ -177,7 +180,101 @@ a {
 	  color: white;
 	}
 }
-/**/
+
+
+.course_info{
+	&_basic{
+		position: relative;
+		min-height: 300px;
+		max-width: 1200px;
+		margin: auto;
+		margin-top: 50px;
+		text-align: center;
+		.rateBtn{
+		  position: absolute;
+		  right: 0;
+		  bottom: 0px;
+		  width: 100px;
+		  height: 100px;
+		  border-radius: 50%;
+		  z-index: 2;
+		  span{
+		  	color: white;
+		  }
+		}
+		.title{
+			font-size: 2em;
+			margin: 30px 0;
+		}
+		.stars{
+			margin-top: 20px;
+			img{
+				width: 50px;
+				margin-left: 20px;
+			}
+		}
+		.otherContent{
+			position: absolute;
+		  bottom: 0;
+		  width: 100%;
+		  margin-bottom: 50px;
+		  .cc{
+		  	display: inline-block;
+			  font-size: 1em;
+			  margin: 0 20px;
+		  }
+		}
+	}
+}
+
+.commentContainer{
+	max-width: 1200px;
+	margin: auto;
+	.starSelector{
+		width: 50px;
+		display: inline-block;
+	}
+	.submitBtn{
+		span{
+			color: white;
+		}
+	}
+	.comment_card{
+		min-height: 200px;
+		position: relative;
+		width: 100%;
+		margin: auto;
+		margin-top: 20px;
+		display: inline-block;
+		.profile{
+			width: 200px;
+	  	text-align: center;
+	  	margin-top: auto;
+	  	margin-bottom: auto;
+	  	display: inline-block;
+	  	margin-top: 25px;
+			.user_img{
+				max-width: 100px;
+			}
+		}
+		.comment{
+			display: inline-block;
+			font-size: 1.6em;
+			position: relative;
+			bottom: 35px;
+		}
+		.stars{
+			display: inline-block;
+			float: right;
+			position: relative;
+			top: 70px;
+			right: 50px;
+			img{
+				width: 40px;
+			}
+		}
+	}
+}
 
 
 

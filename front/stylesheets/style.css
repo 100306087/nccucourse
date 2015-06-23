@@ -36,25 +36,30 @@ footer, header, hgroup, menu, nav, section {
 
 /* line 31, ../sass/reset.scss */
 /* line 36, ../sass/style.scss */
+html {
+  background-color: #f0f0f0;
+}
+
+/* line 39, ../sass/style.scss */
 body {
   line-height: 1;
   background-color: #f0f0f0;
 }
 
 /* line 34, ../sass/reset.scss */
-/* line 42, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 ol, ul {
   list-style: none;
 }
 
 /* line 37, ../sass/reset.scss */
-/* line 47, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 blockquote, q {
   quotes: none;
 }
 
 /* line 40, ../sass/reset.scss */
-/* line 52, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
@@ -62,71 +67,71 @@ q:before, q:after {
 }
 
 /* line 45, ../sass/reset.scss */
-/* line 59, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
 /* line 49, ../sass/reset.scss */
-/* line 65, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
 /*start here*/
-/* line 71, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .nav {
   color: white;
 }
-/* line 73, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 .nav span {
   color: white;
 }
 
-/* line 77, ../sass/style.scss */
+/* line 80, ../sass/style.scss */
 .searcharea {
   position: relative;
   margin-top: 200px;
   width: 100%;
 }
-/* line 81, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .searcharea input {
   width: 50%;
   height: 38px;
   position: relative;
   margin-left: 20%;
 }
-/* line 88, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 .searcharea .searchBtn span {
   color: white;
 }
 
-/* line 94, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 .tagarea {
   min-height: 100px;
   width: 60%;
   position: relative;
   left: 20%;
 }
-/* line 99, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 .tagarea .tagstar {
   position: relative;
   background-color: #f44336;
 }
-/* line 103, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 .tagarea .tag {
   position: relative;
 }
-/* line 105, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 .tagarea .tag .close {
   position: absolute;
   width: 100%;
   right: 0;
   opacity: 0.1;
 }
-/* line 111, ../sass/style.scss */
+/* line 114, ../sass/style.scss */
 .tagarea .tag .close:hover {
   position: absolute;
   opacity: 1;
@@ -135,44 +140,41 @@ a {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
 }
-/* line 120, ../sass/style.scss */
+/* line 123, ../sass/style.scss */
 .tagarea button {
   margin: 30px 20px 0 0;
 }
-/* line 122, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .tagarea button span {
   color: white;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .selectorarea {
   text-align: center;
 }
-/* line 130, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .selectorarea .select {
   margin: 10px 30px;
+  display: inline-block;
 }
 
-/* line 136, ../sass/style.scss */
+/* line 140, ../sass/style.scss */
 .list .searchlistcard {
   max-width: 1080px;
   margin: auto;
   margin-top: 50px;
 }
-/* line 140, ../sass/style.scss */
-.list .searchlistcard .searchList {
-  text-align: center;
-}
-/* line 142, ../sass/style.scss */
+/* line 146, ../sass/style.scss */
 .list .searchlistcard .searchList tr.ng-scope:hover {
   background-color: rgba(244, 67, 54, 0.46);
   cursor: pointer;
 }
-/* line 147, ../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .list .searchlistcard .searchList .title td {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
-/* line 151, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 .list .searchlistcard .searchList td {
   height: 30px;
   line-height: 30px;
@@ -180,13 +182,13 @@ a {
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* line 163, ../sass/style.scss */
+/* line 167, ../sass/style.scss */
 .pager {
   text-align: center;
   width: 100%;
   margin-top: 30px;
 }
-/* line 167, ../sass/style.scss */
+/* line 171, ../sass/style.scss */
 .pager .pageS {
   margin-right: 10px;
   background-color: white;
@@ -194,10 +196,115 @@ a {
   color: #464646;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-/* line 174, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 .pager .pageS.active {
   background-color: #f44336;
   color: white;
 }
 
-/**/
+/* line 186, ../sass/style.scss */
+.course_info_basic {
+  position: relative;
+  min-height: 300px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+}
+/* line 193, ../sass/style.scss */
+.course_info_basic .rateBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  z-index: 2;
+}
+/* line 201, ../sass/style.scss */
+.course_info_basic .rateBtn span {
+  color: white;
+}
+/* line 205, ../sass/style.scss */
+.course_info_basic .title {
+  font-size: 2em;
+  margin: 30px 0;
+}
+/* line 209, ../sass/style.scss */
+.course_info_basic .stars {
+  margin-top: 20px;
+}
+/* line 211, ../sass/style.scss */
+.course_info_basic .stars img {
+  width: 50px;
+  margin-left: 20px;
+}
+/* line 216, ../sass/style.scss */
+.course_info_basic .otherContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 50px;
+}
+/* line 221, ../sass/style.scss */
+.course_info_basic .otherContent .cc {
+  display: inline-block;
+  font-size: 1em;
+  margin: 0 20px;
+}
+
+/* line 230, ../sass/style.scss */
+.commentContainer {
+  max-width: 1200px;
+  margin: auto;
+}
+/* line 233, ../sass/style.scss */
+.commentContainer .starSelector {
+  width: 50px;
+  display: inline-block;
+}
+/* line 238, ../sass/style.scss */
+.commentContainer .submitBtn span {
+  color: white;
+}
+/* line 242, ../sass/style.scss */
+.commentContainer .comment_card {
+  min-height: 200px;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  display: inline-block;
+}
+/* line 249, ../sass/style.scss */
+.commentContainer .comment_card .profile {
+  width: 200px;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: inline-block;
+  margin-top: 25px;
+}
+/* line 256, ../sass/style.scss */
+.commentContainer .comment_card .profile .user_img {
+  max-width: 100px;
+}
+/* line 260, ../sass/style.scss */
+.commentContainer .comment_card .comment {
+  display: inline-block;
+  font-size: 1.6em;
+  position: relative;
+  bottom: 35px;
+}
+/* line 266, ../sass/style.scss */
+.commentContainer .comment_card .stars {
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 70px;
+  right: 50px;
+}
+/* line 272, ../sass/style.scss */
+.commentContainer .comment_card .stars img {
+  width: 40px;
+}

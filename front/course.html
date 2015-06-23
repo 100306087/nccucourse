@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="fanpage2app"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+  <title>帕森課程查詢系統</title>
+  <script type="text/javascript" src="javascripts/angular-1.3.15.min.js"></script>
+  <script type="text/javascript" src="javascripts/angular-animate-1.3.15.min.js"></script>
+  <script type="text/javascript" src="javascripts/angular-aria-1.3.15.min.js"></script>
+  <script type="text/javascript" src="javascripts/angular-material-0.9.7.min.js"></script>
+  <script type="text/javascript" src="javascripts/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="javascripts/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="stylesheet2/reset.css">
+  <link rel="stylesheet" type="text/css" href="stylesheet2/angular-material-0.9.7.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body>
+  <div ng-controller="CourseCtrl" ng-init="init()">
+  
+      <md-toolbar class="nav">
+        <div class="md-toolbar-tools">
+          <h2 ng-click='cleanSearch()' style="cursor: pointer;">
+            <span>帕森課程查詢系統</span>
+          </h2>
+          <span flex></span>
+          <md-button >
+            <a href="mypage.html">我的推薦</a>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="More">
+            <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+
+      <md-card class="course_info_basic">
+        <div class="title">
+          {{courseContent.course_name}}
+        </div>
+        <div class="stars">
+        </div>
+        <div class="otherContent">
+          <div class="cc time">課程時間：{{courseContent.course_weekday}}</div>
+          <div class="cc teacher">授課教師：{{courseContent.course_teacher}}</div>
+          <div class="cc department">開課學院：{{courseContent.course_department}}</div>
+          <div class="cc credit">學分數：{{courseContent.course_credit}}</div>
+        </div>
+        <md-button class="rateBtn" style="background-color: rgb(205, 69, 69);" ng-click="go('#reply')">我要評分</md-button>
+      </md-card>
+
+      <div class="commentContainer">
+        <md-card class="comment_card" ng-repeat="item in courseReview">
+          <div class="profile">
+            <img src="{{item.user_img}}" class="user_img">
+            <h4>{{item.user}}</h4>
+          </div>
+          <div class="comment">
+            <h3>{{item.course_comment}}
+          </div>
+          <div class="stars">
+            <img src="img/starfull.png" ng-repeat="n in [] | range:item.course_score">
+            <img src="img/starno.png" ng-repeat="n in [] | range:5-item.course_score">
+          </div>
+        </md-card>
+        <div style="width:100%;font-size:1.2em;text-align:center;margin:30px;" id="reply"><h2>我要評分</h2></div>
+        <md-card class="user_comment">
+          <md-input-container flex>
+            <label>留言</label>
+            <textarea ng-model="resP" columns="1" md-maxlength="150"></textarea>
+          </md-input-container>
+          <md-input-container flex>
+            <label>給他幾顆星</label>
+          </md-input-container>
+          <br>
+          <div>
+            <md-button class="starSelector" ng-click="giveScore(1)"><img src="img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(2)"><img src="img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(3)"><img src="img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(4)"><img src="img/starno.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(5)"><img src="img/starno.png" style="width:30px;"></md-button>
+            （ 你給了{{scores}}顆星 ）
+          </div>
+          <md-button style="background:rgb(63,81,181);" class="submitBtn" ng-click="commit()">送出</md-button>
+        </md-card>
+      </div>
+  </div>
+
+</body>
+</html>
