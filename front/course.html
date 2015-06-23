@@ -3,15 +3,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
   <title>帕森課程查詢系統</title>
-  <script type="text/javascript" src="static/javascripts/angular-1.3.15.min.js"></script>
-  <script type="text/javascript" src="static/javascripts/angular-animate-1.3.15.min.js"></script>
-  <script type="text/javascript" src="static/javascripts/angular-aria-1.3.15.min.js"></script>
-  <script type="text/javascript" src="static/javascripts/angular-material-0.9.7.min.js"></script>
-  <script type="text/javascript" src="static/javascripts/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript" src="static/javascripts/app.js"></script>
-  <link rel="stylesheet" type="text/css" href="static/stylesheet2/reset.css">
-  <link rel="stylesheet" type="text/css" href="static/stylesheet2/angular-material-0.9.7.min.css">
-  <link rel="stylesheet" type="text/css" href="static/stylesheets/style.css">
+  <script type="text/javascript" src="../static/javascripts/angular-1.3.15.min.js"></script>
+  <script type="text/javascript" src="../static/javascripts/angular-animate-1.3.15.min.js"></script>
+  <script type="text/javascript" src="../static/javascripts/angular-aria-1.3.15.min.js"></script>
+  <script type="text/javascript" src="../static/javascripts/angular-material-0.9.7.min.js"></script>
+  <script type="text/javascript" src="../static/javascripts/jquery-2.1.3.min.js"></script>
+  <script type="text/javascript" src="../static/javascripts/app.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/stylesheet2/reset.css">
+  <link rel="stylesheet" type="text/css" href="../static/stylesheet2/angular-material-0.9.7.min.css">
+  <link rel="stylesheet" type="text/css" href="../static/stylesheets/style.css">
 </head>
 <body>
   <div ng-controller="CourseCtrl" ng-init="init()">
@@ -26,7 +26,7 @@
             <a href="mypage.html">我的推薦</a>
           </md-button>
           <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-svg-icon="static/img/icons/more_vert.svg"></md-icon>
+            <md-icon md-svg-icon="../static/img/icons/more_vert.svg"></md-icon>
           </md-button>
         </div>
       </md-toolbar>
@@ -56,8 +56,8 @@
             <h3>{{item.course_comment}}
           </div>
           <div class="stars">
-            <img src="static/img/starfull.png" ng-repeat="n in [] | range:item.course_score">
-            <img src="static/img/starno.png" ng-repeat="n in [] | range:5-item.course_score">
+            <img src="../static/img/starfull.png" ng-repeat="n in [] | range:item.course_score">
+            <img src="../static/img/starno.png" ng-repeat="n in [] | range:5-item.course_score">
           </div>
         </md-card>
         <div style="width:100%;font-size:1.2em;text-align:center;margin:30px;" id="reply"><h2>我要評分</h2></div>
@@ -71,11 +71,11 @@
           </md-input-container>
           <br>
           <div>
-            <md-button class="starSelector" ng-click="giveScore(1)"><img src="static/img/starfull.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(2)"><img src="static/img/starfull.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(3)"><img src="static/img/starfull.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(4)"><img src="static/img/starno.png" style="width:30px;"></md-button>
-            <md-button class="starSelector" ng-click="giveScore(5)"><img src="static/img/starno.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(1)"><img src="../static/img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(2)"><img src="../static/img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(3)"><img src="../static/img/starfull.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(4)"><img src="../static/img/starno.png" style="width:30px;"></md-button>
+            <md-button class="starSelector" ng-click="giveScore(5)"><img src="../static/img/starno.png" style="width:30px;"></md-button>
             （ 你給了{{scores}}顆星 ）
           </div>
           <md-button style="background:rgb(63,81,181);" class="submitBtn" ng-click="commit()">送出</md-button>
